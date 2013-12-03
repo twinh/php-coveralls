@@ -72,6 +72,13 @@ class CoverallsV1JobsCommand extends Command
             InputOption::VALUE_OPTIONAL,
             'Runtime environment name: test, dev, prod',
             'prod'
+        )
+        ->addOption(
+            'src_dir',
+            null,
+            InputOption::VALUE_OPTIONAL,
+            'The root level of your source files directory',
+            'src'
         );
     }
 
