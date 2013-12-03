@@ -74,7 +74,7 @@ class CoverallsV1JobsCommand extends Command
             'prod'
         )
         ->addOption(
-            'src_dir',
+            'src-dir',
             null,
             InputOption::VALUE_OPTIONAL,
             'The root level of your source files directory',
@@ -127,7 +127,8 @@ class CoverallsV1JobsCommand extends Command
         ->setDryRun($input->getOption('dry-run'))
         ->setExcludeNoStatementsUnlessFalse($input->getOption('exclude-no-stmt'))
         ->setVerbose($input->getOption('verbose'))
-        ->setEnv($input->getOption('env'));
+        ->setEnv($input->getOption('env'))
+        ->setSrcDir($input->getOption('src-dir'));
     }
 
     /**
