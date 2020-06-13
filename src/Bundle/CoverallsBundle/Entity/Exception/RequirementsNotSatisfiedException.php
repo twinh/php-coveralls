@@ -72,6 +72,11 @@ For AppVeyor users:
   - APPVEYOR
   - APPVEYOR_BUILD_NUMBER
 
+For Githib Actions users:
+  - GITHUB_REF
+  - GITHUB_SHA
+  - GITHUB_ACTIONS
+
 From local environment:
 
   - COVERALLS_RUN_LOCALLY
