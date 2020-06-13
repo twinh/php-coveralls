@@ -1,5 +1,5 @@
 {
-    "name": "php-coveralls/php-coveralls",
+    "name": "twinh/php-coveralls",
     "description": "PHP client library for Coveralls API",
     "keywords": ["coverage", "github", "test", "ci"],
     "homepage": "https://github.com/php-coveralls/php-coveralls",
