@@ -93,6 +93,22 @@ class JsonFile extends Coveralls
     protected $runAt;
 
     /**
+     * If this is set, the build will not be considered done until a webhook has
+     * been sent to https://coveralls.io/webhook?repo_token=…
+     *
+     * @var bool
+     */
+    protected $parallel;
+
+    /**
+     * If this is set, the job being reported will be named in the view and have
+     * it’s own independent status reported to your VCS provider.
+     *
+     * @var string
+     */
+    protected $flagName;
+
+    /**
      * Metrics.
      *
      * @var Metrics
@@ -122,6 +138,8 @@ class JsonFile extends Coveralls
             'repo_token' => 'repoToken',
             'git' => 'git',
             'run_at' => 'runAt',
+            'parallel' => 'parallel',
+            'flag_name' => 'flagName',
             'source_files' => 'sourceFiles',
         ];
 
@@ -507,12 +525,18 @@ class JsonFile extends Coveralls
             'serviceJobId' => 'CI_JOB_ID',
             'serviceEventType' => 'COVERALLS_EVENT_TYPE',
             'repoToken' => 'COVERALLS_REPO_TOKEN',
+            'parallel' => 'COVERALLS_PARALLEL',
+            'flagName' => 'COVERALLS_FLAG_NAME',
         ];
 
         foreach ($map as $propName => $envName) {
             if (isset($env[$envName])) {
                 $this->$propName = $env[$envName];
             }
+        }
+
+        if (isset($env['COVERALLS_PARALLEL'])) {
+            $this->parallel = (bool) $env['COVERALLS_PARALLEL'];
         }
 
         return $this;
