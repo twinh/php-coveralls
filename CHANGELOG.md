@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+## 2.3.0
+
+- [#1](https://github.com/twinh/php-coveralls/pull/1) Add support for GitHub actions #1 ([@Smolevich](https://github.com/Smolevich))
+- [708eded](https://github.com/twinh/php-coveralls/commit/708eded9af0677acad768c1d1b97316e78c0f98e) Support `parallel` and `flag_name` params by `COVERALLS_PARALLEL` and `COVERALLS_FLAG_NAME` env
+
 ## 2.2.0
 
 ### Enhancement
