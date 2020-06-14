@@ -157,6 +157,19 @@ php-coveralls collects `count` attribute in a `line` tag from `clover.xml` if it
 <line num="43" type="method" name="getCommandName" crap="1" count="1"/>
 ```
 
+## GitHub Actions
+
+Added a new step after phpunit generated coverage report.
+
+```yaml
+- name: Upload coverage results to Coveralls
+  env:
+    COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  run: |
+    composer global require twinh/php-coveralls
+    php-coveralls --coverage_clover=build/logs/clover.xml -v
+```
+
 ## Travis CI
 
 Add `php php-coveralls.phar` or `php vendor/bin/php-coveralls` to your `.travis.yml` at `after_success`.
