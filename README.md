@@ -159,7 +159,7 @@ php-coveralls collects `count` attribute in a `line` tag from `clover.xml` if it
 
 ## GitHub Actions
 
-Added a new step after phpunit generated coverage report.
+Add a new step after phpunit generate coverage report.
 
 ```yaml
 - name: Upload coverage results to Coveralls
